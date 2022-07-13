@@ -1,0 +1,56 @@
+.center{
+    text-align: center;
+}
+.movieContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.cardImg{
+    height: 100%;
+    width: 100%;
+}
+.movieCard{
+  width: 20vw;
+  height: 40vh;
+  position: relative;
+  color: white;
+  margin: 1rem;
+}
+.cardTitle{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.btn{
+   position: absolute;
+   bottom: 2rem;
+   /* border: 1px solid red; */
+   width: 100%;
+   text-align: center;
+
+}
+.page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width:400px) {
+  .movieCard{
+    height: 25vh;
+    width: 35vw;
+  }
+  .cardTitle{
+    font-size: 0.9rem;
+  }
+  .btn{
+    bottom: 1rem;
+  }
+  .btn a{
+    width: 80%;
+    font-size: 0.8rem;
+  }
+}

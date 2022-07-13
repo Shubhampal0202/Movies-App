@@ -1,38 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Navbar from './Components/Navbar';
-import Banner from './Components/Banner';
-import Movies from './Components/Movies';
-import Favourite from './Components/Favourite';
-import { BrowserRouter as Router, Routes,Switch, Route,BrowserRouter } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Banner from './Components/Banner/Banner';
+import Movie from './Components/Movie/Movie';
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Favourite from './Components/Favourite/Favourite';
 function App() {
   return (
-          
-           <BrowserRouter>
-              <Navbar/>
-              <Routes>
-           
-              <Route path='/' element={ 
-                <>
-                <Banner/>
-                <Movies/>
-                </>
-              }/> 
-
-         
-               <Route path='/favourite' element={<Favourite/>}/> 
-              </Routes>
-              
-               {/* <Banner/>
-               <Movies/>
-               <Favourite/> */}
-           </BrowserRouter>
-
-  
-          
-        
-
-  );                                      
+    <>
+        <Navbar />
+      <Switch>
+        <Route path="/"  exact  render={
+          (props)=>(
+            <>
+             <Banner  {...props}/>   {/*  now we can pass props */}
+             <Movie {...props} />
+            </>
+          )
+        }/>
+        <Route path="/favourites" component={Favourite}  />
+      </Switch>
+    
+    </>
+  )
 }
-
 export default App;
+
+
+
+
+
+
+
